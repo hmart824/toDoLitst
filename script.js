@@ -72,7 +72,8 @@ const render = ()=>{
     let tasks = JSON.parse(localStorage.getItem('tasks'));
     completedTasks = [];
     list.innerHTML = "";
-    tasks.forEach((el)=>{
+    if(tasks.length > 0){
+        tasks.forEach((el)=>{
          let li = document.createElement('li');
         li.innerHTML = `
         <input type="checkbox" name="check" id="${el.id}" class="custom-checkbox" ${el.completed ? "checked" : ''}/>
@@ -84,6 +85,7 @@ const render = ()=>{
             completedTasks.push(el);
         }
     });
+    }
     taskCounter.innerText = tasks.length;
     completedTask.innerText = completedTasks.length ;
 }
