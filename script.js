@@ -32,7 +32,7 @@ const handleInputs = (e)=>{
 
     let tasks = JSON.parse(localStorage.getItem('tasks'));
     //Handle delete icon click
-    if(tasks.length > 0){
+    if(tasks?.length > 0){
         if(e.target.dataset.class === 'delete'){
             const taskId = e.target.dataset.id;
             deleteTask(taskId);
@@ -40,7 +40,7 @@ const handleInputs = (e)=>{
     }
 
     //Handle checkbox click
-    if(tasks.length > 0){
+    if(tasks?.length > 0){
         if(e.target.className === 'custom-checkbox'){
             const taskId = e.target.id;
             toggleList(taskId);
@@ -86,8 +86,8 @@ const render = ()=>{
         }
     });
     }
-    taskCounter.innerText = tasks.length;
-    completedTask.innerText = completedTasks.length ;
+    taskCounter.innerText = tasks?.length;
+    completedTask.innerText = completedTasks?.length ;
 }
 render();
 
