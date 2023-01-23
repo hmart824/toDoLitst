@@ -72,7 +72,7 @@ const render = ()=>{
     let tasks = JSON.parse(localStorage.getItem('tasks'));
     completedTasks = [];
     list.innerHTML = "";
-    if(tasks.length > 0){
+    if(tasks?.length > 0){
         tasks.forEach((el)=>{
          let li = document.createElement('li');
         li.innerHTML = `
